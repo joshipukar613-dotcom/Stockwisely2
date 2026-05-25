@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { TrendingUp, Award, Tag, CalendarDays } from 'lucide-react';
+import { TrendingUp, Award, Tag } from 'lucide-react';
 import { Line, Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS, CategoryScale, LinearScale, PointElement,

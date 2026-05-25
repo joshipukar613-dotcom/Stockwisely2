@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Maximize2, Minimize2, BarChart3, TrendingUp, PieChart as PieChartIcon, Activity } from 'lucide-react';
-import { useTheme } from '../../contexts/ThemeContext';
 
 const ExpandableChart = ({ 
   children, 

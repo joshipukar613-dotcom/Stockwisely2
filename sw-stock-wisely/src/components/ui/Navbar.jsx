@@ -182,16 +182,22 @@ function Navbar() {
                     )}
                     
                     <div className="py-2">
-                      <a href="#" className={`block px-4 py-2 text-sm transition-colors ${
-                        isDark ? 'text-gray-600 hover:bg-gray-100' : 'text-gray-300 hover:bg-gray-800'
-                      }`}>
+                      <button 
+                        className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
+                          isDark ? 'text-gray-600 hover:bg-gray-100' : 'text-gray-300 hover:bg-gray-800'
+                        }`}
+                        onClick={() => {/* Navigate to profile */}}
+                      >
                         Profile Settings
-                      </a>
-                      <a href="#" className={`block px-4 py-2 text-sm transition-colors ${
-                        isDark ? 'text-gray-600 hover:bg-gray-100' : 'text-gray-300 hover:bg-gray-800'
-                      }`}>
+                      </button>
+                      <button 
+                        className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
+                          isDark ? 'text-gray-600 hover:bg-gray-100' : 'text-gray-300 hover:bg-gray-800'
+                        }`}
+                        onClick={() => {/* Navigate to account */}}
+                      >
                         Account Settings
-                      </a>
+                      </button>
                       <hr className={`my-2 ${isDark ? 'border-gray-200' : 'border-gray-800'}`} />
                       <button 
                         onClick={handleSignOut}

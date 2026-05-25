@@ -12,8 +12,6 @@ import {
 } from 'chart.js';
 import { useTheme } from '../../contexts/ThemeContext';
 import { 
-  TrendingUp, 
-  TrendingDown, 
   DollarSign, 
   Users, 
   Package, 

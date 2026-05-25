@@ -22,41 +22,40 @@ const VATCalculator = ({ onClose }) => {
   ];
 
   useEffect(() => {
+    const calculateVAT = () => {
+      const numAmount = parseFloat(amount);
+      const numVatRate = parseFloat(vatRate);
+
+      if (isNaN(numAmount) || isNaN(numVatRate)) {
+        setResult(null);
+        return;
+      }
+
+      let vatAmount, totalAmount, netAmount;
+
+      if (calculationType === 'add') {
+        // Adding VAT to net amount
+        netAmount = numAmount;
+        vatAmount = (numAmount * numVatRate) / 100;
+        totalAmount = numAmount + vatAmount;
+      } else {
+        // Removing VAT from gross amount
+        totalAmount = numAmount;
+        netAmount = numAmount / (1 + numVatRate / 100);
+        vatAmount = totalAmount - netAmount;
+      }
+
+      setResult({
+        netAmount: netAmount.toFixed(2),
+        vatAmount: vatAmount.toFixed(2),
+        totalAmount: totalAmount.toFixed(2)
+      });
+    };
+
     if (amount && vatRate) {
       calculateVAT();
     }
   }, [amount, vatRate, calculationType]);
-
-  const calculateVAT = () => {
-    const numAmount = parseFloat(amount);
-    const numVatRate = parseFloat(vatRate);
-
-    if (isNaN(numAmount) || isNaN(numVatRate)) {
-      setResult(null);
-      return;
-    }
-
-    let vatAmount, totalAmount, netAmount;
-
-    if (calculationType === 'add') {
-      // Adding VAT to net amount
-      netAmount = numAmount;
-      vatAmount = (numAmount * numVatRate) / 100;
-      totalAmount = numAmount + vatAmount;
-    } else {
-      // Removing VAT from gross amount
-      totalAmount = numAmount;
-      netAmount = numAmount / (1 + numVatRate / 100);
-      vatAmount = totalAmount - netAmount;
-    }
-
-    setResult({
-      netAmount: netAmount.toFixed(2),
-      vatAmount: vatAmount.toFixed(2),
-      totalAmount: totalAmount.toFixed(2),
-      vatRate: numVatRate
-    });
-  };
 
   const clearCalculation = () => {
     setAmount('');

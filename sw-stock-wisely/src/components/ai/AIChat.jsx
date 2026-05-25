@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Bot, Database, Lightbulb } from 'lucide-react';
+import { Database, Lightbulb } from 'lucide-react';
 
 import { aiAssistantAPI } from '../../api';
 import MessageBubble from './MessageBubble';

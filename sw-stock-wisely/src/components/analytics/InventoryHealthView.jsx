@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import {
   DollarSign, Package, AlertOctagon, TrendingDown,
-  ArrowRight, PieChart, BarChart3, ListOrdered
+  PieChart, BarChart3, ListOrdered
 } from 'lucide-react';
 import { Doughnut, Bar } from 'react-chartjs-2';
 import {

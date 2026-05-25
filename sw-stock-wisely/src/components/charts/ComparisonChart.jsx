@@ -11,7 +11,6 @@ import {
   Legend,
   Filler
 } from 'chart.js';
-import { useTheme } from '../../contexts/ThemeContext';
 import ExpandableChart from './ExpandableChart';
 
 ChartJS.register(
